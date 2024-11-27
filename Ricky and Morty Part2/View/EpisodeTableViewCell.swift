@@ -16,7 +16,6 @@ class EpisodeTableViewCell: UITableViewCell {
     func configure(with model: Character, episodes: [Episode]) {
         self.labelName.text = model.name
         self.labelLive.text = model.status
-        self.labelNameEpisode.text = episodes.randomElement()?.name ?? "name episode - nil"
         self.labelNumEpisode.text = "|" + " " + (episodes.randomElement()?.episode ?? "num episode - nil")
         
         viewModel.loadImage(from: model.image) { (image) in
