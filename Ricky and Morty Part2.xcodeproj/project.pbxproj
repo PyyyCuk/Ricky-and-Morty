@@ -28,6 +28,7 @@
 		231D63FA2CEF493000E2F36B /* TableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63F92CEF493000E2F36B /* TableViewCellViewModelType.swift */; };
 		231D63FC2CF3405300E2F36B /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63FB2CF3405300E2F36B /* DataFetcherService.swift */; };
 		231D63FE2CF4880D00E2F36B /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63FD2CF4880D00E2F36B /* EpisodeModel.swift */; };
+		231D640C2CFC77AE00E2F36B /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D640B2CFC77AE00E2F36B /* PersonTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		231D63F92CEF493000E2F36B /* TableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModelType.swift; sourceTree = "<group>"; };
 		231D63FB2CF3405300E2F36B /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		231D63FD2CF4880D00E2F36B /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
+		231D640B2CFC77AE00E2F36B /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			children = (
 				231D63EF2CEA237900E2F36B /* EpisodeViewController.swift */,
 				231D63F02CEA237900E2F36B /* EpisodeTableViewCell.swift */,
+				231D640B2CFC77AE00E2F36B /* PersonTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				231D640C2CFC77AE00E2F36B /* PersonTableViewController.swift in Sources */,
 				231D63FA2CEF493000E2F36B /* TableViewCellViewModelType.swift in Sources */,
 				231D63F22CEA237900E2F36B /* EpisodeTableViewCell.swift in Sources */,
 				231D63ED2CEA237100E2F36B /* NetworkService.swift in Sources */,

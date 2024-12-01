@@ -34,24 +34,23 @@ class EpisodeViewController: UIViewController {
 
 extension EpisodeViewController {
     func initialize() {
-        
         viewModel.fetchCharacter {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
-        
         viewModel.fetchEpisode {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
         
+        
         navigationController?.navigationBar.backgroundColor = .white
         navigationItem.title = "Episodes"
         
         tableView.dataSource = self
-        tableView.delegate = self 
+        tableView.delegate = self  
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -83,4 +82,8 @@ extension EpisodeViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexPath = viewModel.selectRow(at: indexPath)
+        print(viewModel.selectedIndexPath)
+    }
 }

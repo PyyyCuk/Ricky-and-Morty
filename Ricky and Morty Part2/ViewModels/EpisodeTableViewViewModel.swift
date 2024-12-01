@@ -9,10 +9,15 @@ import Foundation
 import UIKit
 
 class EpisodeTableViewViewModel: TableViewViewModelType {
+   
+    
+    //MARK: - переменные
+    var selectedIndexPath: IndexPath?
     
     //MARK: - Внешние зависимости
     var characters: [Character] = []
     var episodes: [Episode] = []
+ 
     
     //MARK: - Сеть
     var dataFetcher: DataFetcher
@@ -52,36 +57,37 @@ class EpisodeTableViewViewModel: TableViewViewModelType {
             completion(nil)
             return
         }
-        
         networking.request(urlString: imageString) { (data, error) in
-            // Проверяем наличие ошибки
             if let error = error {
                 print("Ошибка загрузки изображения: \(error)")
                 completion(nil)
                 return
             }
-            
-            // Проверяем наличие данных
             guard let data = data else {
                 completion(nil)
                 return
             }
-            
-            // Создаем изображение из данных
             let image = UIImage(data: data)
-            completion(image) // Возвращаем загруженное изображение
+            completion(image)
         }
     }
     
-    func numberOfSection() -> Int {
-        return characters.count
-    }
-    
-    var isHeartTapped: Bool = false { //Отслеживание состояния кнопки
+    //MARK: - Отслеживание состояния кнопки сердца
+    var isHeartTapped: Bool = false {
         didSet {
             
         }
     }
+    
+    //MARK: - Реализация протокола
+    func numberOfSection() -> Int {
+        return characters.count
+    }
+    
+    func selectRow(at IndexPath: IndexPath) {
+        self.selectedIndexPath = IndexPath
+    }
+
 }
 //    //MARK: - Внешние зависимости
 //    var dataFetcher: DataFetcher

@@ -17,10 +17,12 @@ class EpisodeTableViewCell: UITableViewCell {
         self.labelName.text = model.name
         self.labelLive.text = model.status
         self.labelNumEpisode.text = "|" + " " + (episodes.randomElement()?.episode ?? "num episode - nil")
+        self.labelNameEpisode.text = episodes.randomElement()?.name
         
-        viewModel.loadImage(from: model.image) { (image) in
-            self.personImage.image = image
-        }
+//        viewModel.loadImage(from: model.image) { (image) in
+//            self.personImage.image = image
+//        }
+        self.personImage.image = viewModel.personImage
     }
     
     //MARK: - Init

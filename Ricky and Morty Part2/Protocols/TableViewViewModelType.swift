@@ -9,4 +9,5 @@ import Foundation
 
 protocol TableViewViewModelType {
     func numberOfSection() -> Int
+    func selectRow(at IndexPath: IndexPath)
 }
