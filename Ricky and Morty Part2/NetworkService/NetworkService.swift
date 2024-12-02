@@ -11,7 +11,7 @@ class NetworkService: Networking {
     
     func request(urlString: String, completion: @escaping (Data?, Error?) -> Void) {
         guard let url = URL(string: urlString) else {
-            print("Request data - nil")
+            print("REQUEST - nil")
             return
         }
         let request = URLRequest(url: url)

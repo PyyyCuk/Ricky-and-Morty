@@ -10,14 +10,9 @@ import UIKit
 
 class EpisodeTableViewViewModel: TableViewViewModelType {
    
-    
-    //MARK: - переменные
-    var selectedIndexPath: IndexPath?
-    
     //MARK: - Внешние зависимости
     var characters: [Character] = []
     var episodes: [Episode] = []
- 
     
     //MARK: - Сеть
     var dataFetcher: DataFetcher
@@ -72,20 +67,9 @@ class EpisodeTableViewViewModel: TableViewViewModelType {
         }
     }
     
-    //MARK: - Отслеживание состояния кнопки сердца
-    var isHeartTapped: Bool = false {
-        didSet {
-            
-        }
-    }
-    
     //MARK: - Реализация протокола
     func numberOfSection() -> Int {
-        return characters.count
-    }
-    
-    func selectRow(at IndexPath: IndexPath) {
-        self.selectedIndexPath = IndexPath
+        characters.count
     }
 
 }

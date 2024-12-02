@@ -10,19 +10,11 @@ import UIKit
 
 class EpisodeTableViewCell: UITableViewCell {
     
-    //MARK: - Внешние зависимоти
-    var viewModel = EpisodeTableViewViewModel()
-    
     func configure(with model: Character, episodes: [Episode]) {
         self.labelName.text = model.name
-        self.labelLive.text = model.status
-        self.labelNumEpisode.text = "|" + " " + (episodes.randomElement()?.episode ?? "num episode - nil")
+        self.labelStatus.text = model.status
+        self.labelNumEpisode.text = episodes.first?.episode
         self.labelNameEpisode.text = episodes.randomElement()?.name
-        
-//        viewModel.loadImage(from: model.image) { (image) in
-//            self.personImage.image = image
-//        }
-        self.personImage.image = viewModel.personImage
     }
     
     //MARK: - Init
@@ -93,7 +85,7 @@ class EpisodeTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let labelLive: UILabel = {
+    private let labelStatus: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .darkGray
@@ -139,19 +131,9 @@ class EpisodeTableViewCell: UITableViewCell {
         return button
     }()
     
-    
-    @objc func heartPressed() {
-        viewModel.isHeartTapped.toggle()
-        let imageName = viewModel.isHeartTapped ? "heart.fill" : "heart"
-        heartButton.setImage(UIImage(systemName: imageName), for: .normal)
-        heartButton.tintColor = viewModel.isHeartTapped ? .systemRed : .systemCyan
-    }
-    
 }
 extension EpisodeTableViewCell {
     func initialize() {
-        
-        heartButton.addTarget(self, action: #selector(heartPressed), for: .touchUpInside)
         
         contentView.addSubview(personImage)
         NSLayoutConstraint.activate([
@@ -169,18 +151,18 @@ extension EpisodeTableViewCell {
             labelName.heightAnchor.constraint(equalToConstant: Constant.sizeNameHeight)
         ])
         
-        contentView.addSubview(labelLive)
+        contentView.addSubview(labelStatus)
         NSLayoutConstraint.activate([
-            labelLive.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: Constant.offsetLiveTop),
-            labelLive.leadingAnchor.constraint(equalTo: labelName.leadingAnchor),
-            labelLive.widthAnchor.constraint(equalToConstant: Constant.sizeLiveWitdh),
-            labelLive.heightAnchor.constraint(equalToConstant: Constant.sizeLiveHeight)
+            labelStatus.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: Constant.offsetLiveTop),
+            labelStatus.leadingAnchor.constraint(equalTo: labelName.leadingAnchor),
+            labelStatus.widthAnchor.constraint(equalToConstant: Constant.sizeLiveWitdh),
+            labelStatus.heightAnchor.constraint(equalToConstant: Constant.sizeLiveHeight)
         ])
         
         contentView.addSubview(playButton)
         NSLayoutConstraint.activate([
-            playButton.topAnchor.constraint(equalTo: labelLive.bottomAnchor, constant: Constant.offsetButtonPlayTop),
-            playButton.leadingAnchor.constraint(equalTo: labelLive.leadingAnchor, constant: Constant.offsetButtonPlayLeft),
+            playButton.topAnchor.constraint(equalTo: labelStatus.bottomAnchor, constant: Constant.offsetButtonPlayTop),
+            playButton.leadingAnchor.constraint(equalTo: labelStatus.leadingAnchor, constant: Constant.offsetButtonPlayLeft),
             playButton.widthAnchor.constraint(equalToConstant: Constant.sizeButtonPlayWidth),
             playButton.heightAnchor.constraint(equalToConstant: Constant.sizeButtonPlayHeight)
         ])

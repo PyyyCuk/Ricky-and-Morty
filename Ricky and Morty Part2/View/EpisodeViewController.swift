@@ -10,11 +10,12 @@ import UIKit
 class EpisodeViewController: UIViewController {
 
     //MARK: - Внешние зависимости
-    var viewModel = EpisodeTableViewViewModel()
+    var viewModel: TableViewViewModelType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel = EpisodeTableViewViewModel()
         initialize()
     }
     
@@ -34,6 +35,9 @@ class EpisodeViewController: UIViewController {
 
 extension EpisodeViewController {
     func initialize() {
+        
+        guard let viewModel = viewModel else { return }
+        
         viewModel.fetchCharacter {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -69,21 +73,16 @@ extension EpisodeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfSection() 
+        return viewModel?.numberOfSection() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: "EpisodeTableViewCell"), for: indexPath) as? EpisodeTableViewCell
-        guard let cell = cell else { return UITableViewCell() }
-        let character = viewModel.characters[indexPath.row]
-        cell.configure(with: character, episodes: viewModel.episodes)
-        cell.selectionStyle = .none
-        cell.backgroundColor = .white
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPath = viewModel.selectRow(at: indexPath)
-        print(viewModel.selectedIndexPath)
+        guard let tableViewCell = cell else { return UITableViewCell() }
+        if let viewModel = viewModel as? EpisodeTableViewViewModel {
+            let characters = viewModel.characters[indexPath.row]
+            tableViewCell.configure(with: characters, episodes: viewModel.episodes)
+        }
+        return tableViewCell
     }
 }
