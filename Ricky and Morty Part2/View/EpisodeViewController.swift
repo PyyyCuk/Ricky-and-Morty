@@ -85,4 +85,10 @@ extension EpisodeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return tableViewCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        let selectRow = viewModel.selectRow(at: indexPath)
+        print(selectRow)
+    }
 }

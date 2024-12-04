@@ -9,12 +9,13 @@ import Foundation
 import UIKit
 
 class EpisodeTableViewViewModel: TableViewViewModelType {
-   
+    
+    var selectedIndexPath: IndexPath?
+    
     //MARK: - Внешние зависимости
     var characters: [Character] = []
     var episodes: [Episode] = []
     
-    //MARK: - Сеть
     var dataFetcher: DataFetcher
     var networking: Networking
     
@@ -70,6 +71,11 @@ class EpisodeTableViewViewModel: TableViewViewModelType {
     //MARK: - Реализация протокола
     func numberOfSection() -> Int {
         characters.count
+    }
+    
+    func selectRow(at indexPath: IndexPath) -> IndexPath {
+        self.selectedIndexPath = indexPath
+        return indexPath
     }
 
 }

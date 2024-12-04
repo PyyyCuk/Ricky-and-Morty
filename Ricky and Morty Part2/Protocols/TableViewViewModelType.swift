@@ -11,4 +11,5 @@ protocol TableViewViewModelType {
     func fetchCharacter(completion: @escaping () -> Void)
     func fetchEpisode(completion: @escaping () -> Void)
     func numberOfSection() -> Int
+    func selectRow(at indexPath: IndexPath) -> IndexPath
 }
