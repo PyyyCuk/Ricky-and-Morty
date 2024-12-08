@@ -24,9 +24,6 @@
 		231D63F12CEA237900E2F36B /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63EF2CEA237900E2F36B /* EpisodeViewController.swift */; };
 		231D63F22CEA237900E2F36B /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63F02CEA237900E2F36B /* EpisodeTableViewCell.swift */; };
 		231D63F42CEA239E00E2F36B /* EpisodeTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63F32CEA239E00E2F36B /* EpisodeTableViewViewModel.swift */; };
-		231D63F82CEE068D00E2F36B /* EpisodeTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63F72CEE068D00E2F36B /* EpisodeTableViewCellViewModel.swift */; };
-		231D63FA2CEF493000E2F36B /* TableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63F92CEF493000E2F36B /* TableViewCellViewModelType.swift */; };
-		231D63FC2CF3405300E2F36B /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63FB2CF3405300E2F36B /* DataFetcherService.swift */; };
 		231D63FE2CF4880D00E2F36B /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63FD2CF4880D00E2F36B /* EpisodeModel.swift */; };
 		231D640C2CFC77AE00E2F36B /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D640B2CFC77AE00E2F36B /* PersonTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -70,9 +67,6 @@
 		231D63EF2CEA237900E2F36B /* EpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		231D63F02CEA237900E2F36B /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		231D63F32CEA239E00E2F36B /* EpisodeTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewViewModel.swift; sourceTree = "<group>"; };
-		231D63F72CEE068D00E2F36B /* EpisodeTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		231D63F92CEF493000E2F36B /* TableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModelType.swift; sourceTree = "<group>"; };
-		231D63FB2CF3405300E2F36B /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		231D63FD2CF4880D00E2F36B /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
 		231D640B2CFC77AE00E2F36B /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				231D63F32CEA239E00E2F36B /* EpisodeTableViewViewModel.swift */,
-				231D63F72CEE068D00E2F36B /* EpisodeTableViewCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -182,7 +175,6 @@
 				231D63E52CEA236B00E2F36B /* DataFetcher.swift */,
 				231D63E42CEA236A00E2F36B /* Networking.swift */,
 				231D63E32CEA236A00E2F36B /* TableViewViewModelType.swift */,
-				231D63F92CEF493000E2F36B /* TableViewCellViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -192,7 +184,6 @@
 			children = (
 				231D63E92CEA237100E2F36B /* NetworkDataFetcher.swift */,
 				231D63EA2CEA237100E2F36B /* NetworkService.swift */,
-				231D63FB2CF3405300E2F36B /* DataFetcherService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -337,17 +328,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				231D640C2CFC77AE00E2F36B /* PersonTableViewController.swift in Sources */,
-				231D63FA2CEF493000E2F36B /* TableViewCellViewModelType.swift in Sources */,
 				231D63F22CEA237900E2F36B /* EpisodeTableViewCell.swift in Sources */,
 				231D63ED2CEA237100E2F36B /* NetworkService.swift in Sources */,
 				231D63E62CEA236B00E2F36B /* TableViewViewModelType.swift in Sources */,
 				231D63B02CEA226800E2F36B /* Ricky_and_Morty_Part2.xcdatamodeld in Sources */,
-				231D63FC2CF3405300E2F36B /* DataFetcherService.swift in Sources */,
 				231D63A62CEA226800E2F36B /* AppDelegate.swift in Sources */,
 				231D63FE2CF4880D00E2F36B /* EpisodeModel.swift in Sources */,
 				231D63A82CEA226800E2F36B /* SceneDelegate.swift in Sources */,
 				231D63E12CEA235000E2F36B /* CharactersModel.swift in Sources */,
-				231D63F82CEE068D00E2F36B /* EpisodeTableViewCellViewModel.swift in Sources */,
 				231D63F42CEA239E00E2F36B /* EpisodeTableViewViewModel.swift in Sources */,
 				231D63EC2CEA237100E2F36B /* NetworkDataFetcher.swift in Sources */,
 				231D63E72CEA236B00E2F36B /* Networking.swift in Sources */,

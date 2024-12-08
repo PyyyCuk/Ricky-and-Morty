@@ -10,19 +10,26 @@ import UIKit
 
 class EpisodeTableViewCell: UITableViewCell {
     
-    func configure(with model: Character, episodes: [Episode]) {
+    //MARK: - Внешние зависимости
+    private var viewModel: TableViewViewModelType?
+    
+    func configure(with model: Character, episodes: Episode, image: UIImage) {
         self.labelName.text = model.name
         self.labelStatus.text = model.status
-        self.labelNumEpisode.text = episodes.first?.episode
-        self.labelNameEpisode.text = episodes.randomElement()?.name
+        self.labelNumEpisode.text = episodes.episode
+        self.labelNameEpisode.text = episodes.name
+        self.personImage.image = image
     }
     
     //MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initialize()
         
+        viewModel = EpisodeTableViewViewModel()
+        initialize()
+        heartButton.addTarget(self, action: #selector(heartPressed), for: .touchUpInside)
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -131,6 +138,15 @@ class EpisodeTableViewCell: UITableViewCell {
         return button
     }()
     
+    //MARK: - Методы objc
+    @objc func heartPressed() {
+        guard let viewModel = viewModel as? EpisodeTableViewViewModel else { return }
+        viewModel.heartTapped.toggle()
+        let imageName = viewModel.heartTapped ? "heart.fill" : "heart"
+        heartButton.setImage(UIImage(systemName: imageName), for: .normal)
+        heartButton.tintColor = viewModel.heartTapped ? .systemRed : .systemCyan
+       
+    }
 }
 extension EpisodeTableViewCell {
     func initialize() {

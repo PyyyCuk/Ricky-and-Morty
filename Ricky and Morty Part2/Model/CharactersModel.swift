@@ -26,4 +26,3 @@ struct CharacterResponse: Decodable {
     let results: [Character]
 }
 
-

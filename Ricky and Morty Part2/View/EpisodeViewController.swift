@@ -18,8 +18,7 @@ class EpisodeViewController: UIViewController {
         viewModel = EpisodeTableViewViewModel()
         initialize()
     }
-    
-    //MARK: - static Constant
+
     
     //MARK: - private properties
     private var tableView: UITableView = {
@@ -33,6 +32,7 @@ class EpisodeViewController: UIViewController {
     }()
 }
 
+//MARK: - Расширение класса
 extension EpisodeViewController {
     func initialize() {
         
@@ -49,10 +49,11 @@ extension EpisodeViewController {
             }
         }
         
-        
+        //Настройка навигейшена
         navigationController?.navigationBar.backgroundColor = .white
         navigationItem.title = "Episodes"
         
+        //Настройка и добавление таблицы
         tableView.dataSource = self
         tableView.delegate = self  
         view.addSubview(tableView)
@@ -66,7 +67,7 @@ extension EpisodeViewController {
         
     }
 }
-
+//MARK: - Расширения класса + Протоколы таблицы
 extension EpisodeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 425
@@ -79,9 +80,13 @@ extension EpisodeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: "EpisodeTableViewCell"), for: indexPath) as? EpisodeTableViewCell
         guard let tableViewCell = cell else { return UITableViewCell() }
+        tableViewCell.selectionStyle = .none
         if let viewModel = viewModel as? EpisodeTableViewViewModel {
+            // Проверяем, если индекс выбранной ячейке меньше чем кол-во картинок
+            let image: UIImage? = indexPath.row < viewModel.imagePerson.count ? viewModel.imagePerson[indexPath.row] : nil
+            let episodes: Episode = indexPath.row < viewModel.episodes.count ? viewModel.episodes[indexPath.row] : viewModel.episodes[indexPath.row]
             let characters = viewModel.characters[indexPath.row]
-            tableViewCell.configure(with: characters, episodes: viewModel.episodes)
+            tableViewCell.configure(with: characters, episodes: episodes, image: image!)
         }
         return tableViewCell
     }

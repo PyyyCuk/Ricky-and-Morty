@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol TableViewViewModelType {
     func fetchCharacter(completion: @escaping () -> Void)
