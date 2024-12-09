@@ -10,6 +10,8 @@ import UIKit
 
 class EpisodeTableViewViewModel: TableViewViewModelType {
     
+    var selectedIndexPath: IndexPath?
+    
     //MARK: - Внешние зависимости
     var characters: [Character] = []
     var episodes: [Episode] = []

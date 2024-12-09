@@ -83,7 +83,7 @@ extension EpisodeViewController: UITableViewDataSource, UITableViewDelegate {
         tableViewCell.selectionStyle = .none
         if let viewModel = viewModel as? EpisodeTableViewViewModel {
             // Проверяем, если индекс выбранной ячейке меньше чем кол-во картинок
-            let image: UIImage? = indexPath.row < viewModel.imagePerson.count ? viewModel.imagePerson[indexPath.row] : nil
+            let image: UIImage? = indexPath.row < viewModel.imagePerson.count ? viewModel.imagePerson[indexPath.row] : viewModel.imagePerson[indexPath.row - 0]
             let episodes: Episode = indexPath.row < viewModel.episodes.count ? viewModel.episodes[indexPath.row] : viewModel.episodes[indexPath.row]
             let characters = viewModel.characters[indexPath.row]
             tableViewCell.configure(with: characters, episodes: episodes, image: image!)

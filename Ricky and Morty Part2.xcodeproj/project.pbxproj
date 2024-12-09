@@ -25,7 +25,6 @@
 		231D63F22CEA237900E2F36B /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63F02CEA237900E2F36B /* EpisodeTableViewCell.swift */; };
 		231D63F42CEA239E00E2F36B /* EpisodeTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63F32CEA239E00E2F36B /* EpisodeTableViewViewModel.swift */; };
 		231D63FE2CF4880D00E2F36B /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D63FD2CF4880D00E2F36B /* EpisodeModel.swift */; };
-		231D640C2CFC77AE00E2F36B /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D640B2CFC77AE00E2F36B /* PersonTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +67,6 @@
 		231D63F02CEA237900E2F36B /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		231D63F32CEA239E00E2F36B /* EpisodeTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewViewModel.swift; sourceTree = "<group>"; };
 		231D63FD2CF4880D00E2F36B /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
-		231D640B2CFC77AE00E2F36B /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +154,6 @@
 			children = (
 				231D63EF2CEA237900E2F36B /* EpisodeViewController.swift */,
 				231D63F02CEA237900E2F36B /* EpisodeTableViewCell.swift */,
-				231D640B2CFC77AE00E2F36B /* PersonTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,7 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				231D640C2CFC77AE00E2F36B /* PersonTableViewController.swift in Sources */,
 				231D63F22CEA237900E2F36B /* EpisodeTableViewCell.swift in Sources */,
 				231D63ED2CEA237100E2F36B /* NetworkService.swift in Sources */,
 				231D63E62CEA236B00E2F36B /* TableViewViewModelType.swift in Sources */,
